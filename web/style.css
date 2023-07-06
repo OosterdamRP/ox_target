@@ -1,9 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700&display=swap");
-
-:root {
-  --color-default: #cfd2da;
-  --color-hover: white;
-}
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 body {
   visibility: hidden;
@@ -19,7 +14,7 @@ p {
 }
 
 .material-symbols-outlined {
-  font-variation-settings: "FILL" 0, "wght" 300, "GRAD" 0, "opsz" 40;
+  font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 40;
 }
 
 #eye {
@@ -27,12 +22,9 @@ p {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 22pt;
-  fill: black;
-}
-
-.eye-hover {
-  fill: var(--color-default);
+  font-size: 1.4vh;
+  /* color: #3d5261; */
+  color : #003bdf;
 }
 
 #options-wrapper {
@@ -42,18 +34,23 @@ p {
 }
 
 .option-container {
-  color: var(--color-default);
+  color: #cfd2da;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
-  font-family: "Nunito";
+  font-family: "Roboto", sans-serif;
   background: linear-gradient(
     90deg,
     rgba(20, 20, 20, 0.7) 0%,
     rgba(20, 20, 20, 0.6) 66%,
     rgba(47, 48, 53, 0) 100%
   );
+
+  border: 0px;
+	border-left: 0.2vh solid #3a7daa;
+	border-radius: 0.2vh;
+
   font-size: 11pt;
   line-height: 22pt;
   vertical-align: middle;
@@ -64,6 +61,7 @@ p {
   height: 22pt;
   width: 150pt;
   top: 0;
+  transition: all 0.2s;
 }
 
 .option-container:hover {
@@ -74,7 +72,8 @@ p {
     rgba(57, 58, 63, 0) 100%
   );
   transform-origin: left top;
-  color: var(--color-hover);
+  color: white;
+  border-left: 0.4vh solid #435ea4;
   margin-left: 4pt;
 }
 
@@ -83,7 +82,6 @@ p {
   line-height: 22pt;
   width: 14pt;
   margin: 5pt;
-  color: var(--color-default);
 }
 
 .option-label {
