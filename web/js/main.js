@@ -1,24 +1,30 @@
-import { createOptions } from "./createOptions.js";
+import { createOptions } from './createOptions.js';
 
-const optionsWrapper = document.getElementById("options-wrapper");
+const optionsWrapper = document.getElementById('options-wrapper');
 const body = document.body;
-const eye = document.getElementById("eyeSvg");
+const eye = document.getElementById('eyeSvg');
 
-window.addEventListener("message", (event) => {
-  optionsWrapper.innerHTML = "";
+window.addEventListener('message', (event) => {
+  optionsWrapper.innerHTML = '';
 
   switch (event.data.event) {
-    case "visible": {
-      body.style.visibility = event.data.state ? "visible" : "hidden";
-      return eye.classList.remove("eye-hover");
+    case 'visible': {
+      body.style.visibility = event.data.state ? 'visible' : 'hidden';
+      eye.classList.add("far")
+      eye.style.color = '#3d5261';
+      return (eye.classList.remove("fas"));
     }
 
-    case "leftTarget": {
-      return eye.classList.remove("eye-hover");
+    case 'leftTarget': {
+      eye.classList.remove("fas")
+      eye.style.color = '#3d5261';
+      return (eye.classList.add("far"));
     }
 
-    case "setTarget": {
-      eye.classList.add("eye-hover");
+    case 'setTarget': {
+      eye.classList.remove("far");
+      eye.classList.add("fas");
+      eye.style.color = '#3a7daa';
 
       if (event.data.options) {
         for (const type in event.data.options) {
